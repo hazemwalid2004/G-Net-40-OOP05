@@ -21,6 +21,16 @@
             //c) After applying your fix, can you call Greet() directly on a Translator object (e.g. translator.Greet())? Why or why not? How do you call each version?
             //no / becouse  explicit members are hidden from the class // use interface as a variable type then call
             #endregion
+            #region Q3_Part1
+            //Explain the difference between a shallow copy and a deep copy.
+            //shallow copy object  value type copied independtily but referance type shared 
+            //deep copy copy object  value type copied independtily but referance type independtily 
+            //When would you use each one?
+            //shallow -> object is immutable, no nested reference , performance is critical
+            //deep ->objects must be isolated, modifications should not affect original
+            //What is the risk of using a shallow copy when the object has reference-type fields?
+            //the objects share the inner referance so any change in referance change the two objects 
+            #endregion
         }
     }
 }
