@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace assOOP03
 {
-    internal class Ticket:Iprintable
+    internal class Ticket
     {
         private String moviename;
         private  decimal Price;
@@ -64,10 +64,6 @@ namespace assOOP03
             return totalTicket;
         }
 
-        public virtual void Print()
-        {
-            Console.WriteLine($"Ticket # {TicketId} | {MovieName} | Price : {Price} EGP | After Tax : {PriceAfterTax} EGP | Book : {(isbooked ? "Yes" : "No")}"  );
-        }
         public void book()
         {
             if (isbooked) { return; }

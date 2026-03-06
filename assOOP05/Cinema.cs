@@ -11,8 +11,8 @@ namespace assOOP03
     {
         public string CinemaName { get; set; }
         private Projector proj=new Projector();
-        private Ticket[] tickets = new Ticket[20];
-        public bool AddTicket(Ticket t)
+        private Iprintable[] tickets =new Iprintable[20];
+        public bool AddTicket(Iprintable t)
         {
             for (int i = 0; i < tickets.Length; i++)
             {

@@ -1,13 +1,14 @@
 ﻿using assOOP05;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace assOOP03
 {
-    internal class VIPTicket:Ticket,ICloneable
+    internal class VIPTicket:Ticket,ICloneable,Iprintable
     {
         private decimal serviesfee;
         public bool LoungeAccess { get; set; }
@@ -17,10 +18,9 @@ namespace assOOP03
             serviesfee = 50;
         }
 
-        public override void Print()
+        public void Print()
         {
-            base.Print();
-            Console.WriteLine($" | VIP | Lounge : {LoungeAccess} | ServiceFee : {serviesfee} EGP");
+            Console.WriteLine($"[Ticket # {TicketId}] | VIP | Lounge : {LoungeAccess} | ServiceFee : {serviesfee} EGP | Price : {price} EGP | After Tax : {PriceAfterTax} EGP | Book : {(isbooked ? "Yes" : "No")}" );
         }
 
         public object Clone()

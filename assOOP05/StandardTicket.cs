@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace assOOP03
 {
-    internal class StandardTicket:Ticket,ICloneable
+    internal class StandardTicket:Ticket,ICloneable,Iprintable
     {
         public string seatNumber { get; set; }
         public StandardTicket(string moviename,decimal pri,string _seatnumber) : base(moviename, pri)
         {
             seatNumber=_seatnumber;
         }
-        public override void Print()
+        public void Print()
         {
-            base.Print();
-            Console.WriteLine($" | Standard | seat : {seatNumber}");
+            Console.WriteLine($"[Ticket # {TicketId}] | Standard | seat : {seatNumber} | Price : {price} EGP | After Tax : {PriceAfterTax} EGP | Book : {(isbooked ? "Yes" : "No")}");
         }
 
         public object Clone()

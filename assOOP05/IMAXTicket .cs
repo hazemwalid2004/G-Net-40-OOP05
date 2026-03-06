@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace assOOP03
 {
-    internal class IMAXTicket:Ticket,ICloneable
+    internal class IMAXTicket:Ticket,ICloneable,Iprintable
     {
         private bool Is3d;
         public IMAXTicket(string moviename, decimal pri, bool _Is3D):base(moviename,pri)
@@ -25,10 +25,9 @@ namespace assOOP03
             return new IMAXTicket(MovieName,price,Is3d);
         }
 
-        public override void Print()
+        public void Print()
         {
-            base.Print();
-            Console.WriteLine($" | Imax | Imax 3D : {Is3d}");
+            Console.WriteLine($"[Ticket # {TicketId}] | Imax | Imax 3D : {Is3d} | Price : {price} EGP | After Tax : {PriceAfterTax} EGP | Book : {(isbooked ? "Yes" : "No")}");
         }
     }
 }
